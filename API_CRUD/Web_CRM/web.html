@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Taula CRM</title>
+    <link rel="stylesheet" type="text/css" href="Content/bootstrap.min.css">
+    <link rel="stylesheet" href="lib/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>
+    <main>
+        <header>Taula d'Oportunitats</header>
+        <section id="section1">
+        </section>
+        <section id="section2">
+
+            <div id="foot1" ondrop="onDelete(event)" ondragover="allowDrop(event)">
+                <i class="far fa-check-circle"></i>
+            </div>
+
+            <div id="foot2" ondrop="onDelete2(event)" ondragover="allowDrop(event)">
+                <i class="fas fa-times"></i>
+            </div>
+
+            <div id="foot3">
+                <button id="addbutton" class="open-button" onclick="openForm()">Afegir Oportunitat</button>
+            </div>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <nav class="navbar navbar-inverse">
+                            <div class="container-fluid">
+                                <ul class="nav navbar-nav">
+                                    <li><a href="#" data-toggle="modal" data-target="#Info">Informació</a></li>
+                                    <li><a href="#" data-toggle="modal" data-target="#Afegir">Afegir</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="Informacio">Informació</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="form1">
+                                <div id="cols1">
+                                    <div class="form-inline" id="nomdiv2">
+                                        <label for="nom"><b>Nom</b></label>
+                                        <input class="form-control" id="input2" type="text" readonly>
+                                    </div>
+
+                                    <div class="form-inline" id="descdiv2">
+                                        <label for="descripcio"><b>Descripció</b></label>
+                                        <input class="form-control" id="desc2" type="text" readonly>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                </div>
+                                <div class="cols2">
+                                    <div class="form-inline" id="estatdiv2">
+                                        <label for="estat"><b>Estat</b></label>
+                                        <input class="form-control" id="estat2" type="text" readonly>
+                                    </div>
+
+                                    <div class="form-inline" id="clientdiv2">
+                                        <label for="client"><b>Client</b></label>
+                                        <input class="form-control" id="client2" type="text" readonly>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                </div>
+                            </div>
+                            <div id="form2">
+                                <div id="col1">
+                                    <div class="form-inline" id="nomdiv">
+                                        <label for="nom"><b>Nom</b></label>
+                                        <input class="form-control" id="input" type="text" placeholder="Entra el nom" required>
+                                    </div>
+
+                                    <div class="form-inline" id="descdiv">
+                                        <label for="descripcio"><b>Descripció</b></label>
+                                        <input class="form-control" id="desc" type="text" placeholder="Entra la descripció" required>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                </div>
+                                <div id="col2">
+                                    <div class="form-inline" id="estatdiv">
+                                        <label for="estat"><b>Estat</b></label>
+                                        <select class="form-control" id="estat" required><option></option></select>
+                                    </div>
+
+                                    <div class="form-inline" id="clientdiv">
+                                        <label for="client"><b>Client</b></label>
+                                        <select class="form-control" id="client" required><option></option></select>
+                                    </div>
+                                    <div style="clear: both"></div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="jquery.js"></script>
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <script src="js.js"></script>
+</body>
+</html>
+
+<!--Formulari informació
+<div id="Info" class="form-container">
+    <h1>Informació</h1>
+    <div id="cols1">
+        <div class="form-inline" id="nomdiv2">
+            <label for="nom"><b>Nom</b></label>
+            <input class="form-control" id="input2" type="text" readonly>
+        </div>
+
+        <div class="form-inline" id="descdiv2">
+            <label for="descripcio"><b>Descripció</b></label>
+            <input class="form-control" id="desc2" type="text" readonly>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <div class="cols2">
+        <div class="form-inline" id="estatdiv2">
+            <label for="estat"><b>Estat</b></label>
+            <input class="form-control" id="estat2" type="text" readonly>
+        </div>
+
+        <div class="form-inline" id="clientdiv2">
+            <label for="client"><b>Client</b></label>
+            <input class="form-control" id="client2" type="text" readonly>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <button type="button" class="btn cancel" id="buttonCancel" onclick="closeForm()">Tancar</button>
+</div>-->
+<!--Formulari afegir
+<form class="form-container" id="Afegir">
+    <h1 id="titol">Afegir Oportunitat</h1>
+    <div id="col1">
+        <div class="form-inline" id="nomdiv">
+            <label for="nom"><b>Nom</b></label>
+            <input class="form-control" id="input" type="text" placeholder="Entra el nom" required>
+        </div>
+
+        <div class="form-inline" id="descdiv">
+            <label for="descripcio"><b>Descripció</b></label>
+            <input class="form-control" id="desc" type="text" placeholder="Entra la descripció" required>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <div id="col2">
+        <div class="form-inline" id="estatdiv">
+            <label for="estat"><b>Estat</b></label>
+            <select class="form-control" id="estat" required><option></option></select>
+        </div>
+
+        <div class="form-inline" id="clientdiv">
+            <label for="client"><b>Client</b></label>
+            <select class="form-control" id="client" required><option></option></select>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <button type="button" onclick="onButton(event)" class="btn" id="afegirButton">Afegir</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Tancar</button>
+</form>-->
+<!--Buttons per afegir/sortir
+            <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="tab" id="tab" style="display:flex">
+                    <button class="tablinks" onclick="openForm2(event, 'Info')" id="buttonInfo" type="button">Informació</button>
+                    <button class="tablinks" onclick="openForm2(event, 'Afegir')" id="buttonAdd" type="button">Modificar</button>
+                </div>
+            </div>
+        </nav>-->
